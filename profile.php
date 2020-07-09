@@ -37,7 +37,7 @@ $stmt->close();
             <div>
                 <h1>travelist.</h1>
                 <a href="profile.php"><i class="fas fa-user-circle"></i>プロフィール</a>
-                <a href="#"><i class="fas fa-plus-circle"></i></i>アップロード</a>
+                <a href="upload.php"><i class="fas fa-plus-circle"></i></i>アップロード</a>
                 <a href="logout.php"><i class="fas fa-sign-out-alt"></i>ログアウト</a>
             </div>
         </nav>

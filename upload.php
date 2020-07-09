@@ -1,24 +1,15 @@
-<?php
-session_start();
-//ユーザーがログインされてなかったらログインページへ戻す
-if (!isset($_SESSION['loggedin'])) {
-    header('Location: index.html');
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ホームページ</title>
     <link href="stylesheet.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <title>アップロード</title>
 </head>
 
-<body class="loggedin">
+<body>
     <div class="header-img">
         <nav class="navtop">
             <div>
@@ -27,22 +18,22 @@ if (!isset($_SESSION['loggedin'])) {
                 <a href="upload.php"><i class="fas fa-plus-circle"></i></i>アップロード</a>
                 <a href="logout.php"><i class="fas fa-sign-out-alt"></i>ログアウト</a>
             </div>
-        </nav>
-        <div class="wrap">
-            <div class="search">
-                <input type="text" class="searchTerm" placeholder="Nearest place to eat near me">
-                <button type="submit" class="searchButton" onclick="run()">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
-        </div>
     </div>
     <div class="content">
-        <h2>HOME</h2>
-        <p>Welcome back <?= $_SESSION['name'] ?>!</p>
 
+        <form action="upload_todo.php" method="POST">
+
+            <div>
+                todo:<input type="text" name="todo" class="todo">
+            </div>
+            <div>
+                deadline: <input type="date" name="deadline" class="deadline">
+            </div>
+            <div>
+                <button>Upload Todo</button>
+            </div>
+        </form>
     </div>
-    <script src="gurunaviapi.js"></script>
 </body>
 
 </html>
